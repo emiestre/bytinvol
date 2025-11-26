@@ -124,7 +124,7 @@ const Header = () => {
                               text-[14px]
                               font-bold
                               tracking-[0.5px]
-                             
+
                               no-underline
                               py-[5px]
                               px-[10px]
@@ -133,10 +133,11 @@ const Header = () => {
                               duration-300
                               ease-in-out
                               hover:text-white
+                              hover:bg-[#36454F]
                             "
                >
                   {item.label}
-                 
+
                 </a>
               ))}
             </div>
