@@ -115,7 +115,7 @@ const Header = () => {
             
             {/* Desktop Navigation */}
                        
-            <div className="flex items-center gap-[35px]">
+            <div className="flex items-center gap-0">
               {navItems.map((item) => (
                 <a
                   key={item.href}
@@ -126,14 +126,15 @@ const Header = () => {
                               tracking-[0.5px]
 
                               no-underline
-                              py-[5px]
-                              px-[10px]
-                              rounded-md
+                              py-[15px]
+                              px-[20px]
+                              rounded-none
                               transition-all
                               duration-300
                               ease-in-out
                               hover:text-white
                               hover:bg-[#36454F]
+                              hover:shadow-[inset_0_5px_0_0_#1a1a1a]
                             "
                >
                   {item.label}
