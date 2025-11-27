@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 // import { Menu, X } from 'lucide-react';
 import { MapPin, Phone, Mail, Menu, X } from "lucide-react";
 import '../css/style.css';
@@ -19,10 +20,10 @@ const Header = () => {
 
   const navItems = [
     { href: '/', label: 'HOME' },
-    { href: '/', label: 'SERVICES' },
-    { href: '/', label: 'ABOUT' },
-      { href: '/', label: 'PORTFOLIO' },
-    { href: '/', label: 'CONTACT' },
+    { href: '/services', label: 'SERVICES' },
+    { href: '/about', label: 'ABOUT' },
+    { href: '/portfolio', label: 'PORTFOLIO' },
+    { href: '/contact', label: 'CONTACT' },
   ];
 
   return (
@@ -103,28 +104,28 @@ const Header = () => {
             padding: '0 15px'
           }}>
             {/* Logo - Guarder */}
-            <a href="/" style={{ 
-              fontSize: '28px', 
-              fontWeight: 'bold', 
-              color: '#000', 
+            <Link to="/" style={{
+              fontSize: '28px',
+              fontWeight: 'bold',
+              color: '#000',
               textDecoration: 'none',
               letterSpacing: '1px'
             }}>
              ByteWave
-            </a>
+            </Link>
             
             {/* Desktop Navigation */}
                        
             <div className="flex items-center gap-0">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.href}
-                  href={item.href}
+                  to={item.href}
                   className="
                               text-[14px]
                               font-bold
                               tracking-[0.5px]
-
+                              text-black
                               no-underline
                               py-[15px]
                               px-[20px]
@@ -139,7 +140,7 @@ const Header = () => {
                >
                   {item.label}
 
-                </a>
+                </Link>
               ))}
             </div>
 
@@ -158,7 +159,7 @@ const Header = () => {
       </nav>
 
       {/* Spacer to prevent content from being hidden under fixed header */}
-      <div style={{ height: '100px' }}></div>
+      <div style={{ height: '70px' }}></div>
 
       {/* Add Font Awesome for icons */}
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />

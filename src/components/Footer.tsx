@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Facebook, Instagram, ArrowUp } from 'lucide-react';
 import { FaXTwitter } from "react-icons/fa6";
 import { FaTiktok } from "react-icons/fa";
@@ -9,8 +10,6 @@ import Modal from './Modal';
 import '../css/style.css';
 import '../css/responsive.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Font } from './../../node_modules/lightningcss/node/ast.d';
-import style from './../../node_modules/dom-helpers/esm/css';
 
 const Footer = () => {
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
@@ -64,11 +63,11 @@ const Footer = () => {
             {/* Company Info */}
             <div className="col-lg-4 col-md-6 col-sm-12 mb-4">
               <div className="info_logo">
-                <a className="navbar-brand d-block mb-3" href="/" style={{ textDecoration: 'none' }}>
+                <Link className="navbar-brand d-block mb-3" to="/" style={{ textDecoration: 'none' }}>
                   <div className="d-flex align-items-center">
-                    <img 
-                      src="./byte.png" 
-                      alt="ByteWave Innovations" 
+                    <img
+                      src="./byte.png"
+                      alt="ByteWave Innovations"
                       className="h-16 w-auto rounded-full bg-white p-2 me-3"
                     />
                     <div>
@@ -80,7 +79,7 @@ const Footer = () => {
                       </small>
                     </div>
                   </div>
-                </a>
+                </Link>
                 <p className="text-light mb-4" style={{ lineHeight: '1.6', fontSize: '1.6rem' }}>
                   Delivering cutting-edge technology solutions to propel your business into the future. 
                   Innovation, transformation, and success - that's our promise.
@@ -147,12 +146,12 @@ const Footer = () => {
                 <ul className="list-unstyled">
                       {serviceLinks.map((link, index) => (
                         <li key={index} className="mb-3">
-                          <a
-                            href={link.href}
+                          <Link
+                            to={link.href}
                             className="text-gray-300 block py-1 text-[1.5rem] hover:text-blue-600 hover:pl-2 transition-all duration-300"
                           >
                             {link.label}
-                          </a>
+                          </Link>
                         </li>
                       ))}
                     </ul>
@@ -192,12 +191,12 @@ const Footer = () => {
              <ul className="list-unstyled">
                 {companyLinks.map((link, index) => (
                   <li key={index} className="mb-3">
-                    <a
-                      href={link.href}
+                    <Link
+                      to={link.href}
                       className="text-gray-300 block py-1 text-[1.5rem] hover:text-blue-600 hover:pl-2 transition-all duration-300"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
