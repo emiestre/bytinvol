@@ -21,13 +21,36 @@ const Footer = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (email) {
-      console.log('Subscribing email:', email);
-      setIsSubscribed(true);
-      setEmail('');
-      setTimeout(() => setIsSubscribed(false), 3000);
+      try {
+        const response = await fetch('/api/send-email.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: 'Newsletter Subscriber',
+            email: email,
+            subject: 'Newsletter Subscription',
+            message: 'User subscribed to our newsletter',
+            component: 'Footer Newsletter'
+          })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          setIsSubscribed(true);
+          setEmail('');
+          setTimeout(() => setIsSubscribed(false), 3000);
+        } else {
+          console.error('Failed to send subscription email');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+      }
     }
   };
 

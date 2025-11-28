@@ -1,4 +1,9 @@
-@media (max-width: 1120px) {}
+@media (max-width: 1120px) {
+  .container-fluid {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 
 @media (max-width: 992px) {
   .hero_area {
@@ -34,6 +39,15 @@
   .sub_page .custom_nav-container.navbar-expand-lg .navbar-nav .nav-item .nav-link {
     padding-bottom: 15px;
   }
+
+  nav {
+    padding: 10px 0 !important;
+  }
+
+  .layout_padding {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -43,10 +57,19 @@
 
   .slider_section {
     text-align: center;
+    padding: 30px 0 100px 0 !important;
   }
 
   .slider_section .img-box {
     margin-top: 35px;
+  }
+
+  .slider_section .detail-box {
+    padding: 0 20px;
+  }
+
+  .slider_section .detail-box h1 {
+    font-size: 2.2rem !important;
   }
 
   .slider_section .detail-box .btn-box {
@@ -84,12 +107,10 @@
   }
 
   .info_section .row .col-md-3 {
-
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-
   }
 
   .info_section .info_logo {
@@ -103,24 +124,279 @@
   .info_section .info_form .social_box a {
     margin: 0 5px;
   }
+
+  .layout_padding {
+    padding-top: 45px !important;
+    padding-bottom: 45px !important;
+  }
+
+  .heading_container h2 {
+    font-size: 1.8rem !important;
+  }
+
+  .service_section .box {
+    margin-bottom: 20px;
+  }
+
+  nav {
+    top: 35px !important;
+    padding: 8px 0 !important;
+  }
+
+  .contact_section .contact_form-container {
+    padding: 0 15px;
+  }
+
+  .contact_section .contact_form-container input,
+  .contact_section .contact_form-container textarea {
+    font-size: 14px !important;
+  }
 }
 
 @media (max-width: 576px) {
+  .header_top {
+    padding: 5px 0 !important;
+  }
+
+  .header_top a {
+    font-size: 12px !important;
+    gap: 5px;
+  }
+
   .header_top a span {
     display: none;
   }
 
+  .header_top i {
+    font-size: 14px !important;
+  }
+
+  nav {
+    top: 30px !important;
+    padding: 5px 0 !important;
+  }
+
+  nav a {
+    padding: 10px 12px !important;
+    font-size: 12px !important;
+  }
+
   .slider_section .detail-box h1 {
-    font-size: 2.5rem;
-    line-height: 55px;
+    font-size: 1.8rem !important;
+    line-height: 40px !important;
+  }
+
+  .slider_section .detail-box p {
+    font-size: 14px !important;
+    margin-top: 15px !important;
+  }
+
+  .slider_section .detail-box .btn-box a {
+    width: 140px !important;
+    padding: 8px 20px !important;
+    font-size: 12px !important;
+    margin: 3px !important;
+  }
+
+  .about_section .detail-box {
+    padding: 25px 15px !important;
+  }
+
+  .about_section .detail-box h2 {
+    font-size: 1.5rem !important;
+    margin-bottom: 15px !important;
+  }
+
+  .about_section .detail-box p {
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+  }
+
+  .heading_container h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .service_section .box {
+    padding: 20px 10px !important;
+    margin-top: 30px !important;
+  }
+
+  .service_section .box .img-box svg {
+    width: 50px !important;
+    height: auto !important;
+  }
+
+  .service_section .box .detail-box h6 {
+    font-size: 14px !important;
+  }
+
+  .service_section .box .detail-box p {
+    font-size: 12px !important;
+  }
+
+  .contact_section {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+
+  .contact_section .contact_form-container {
+    margin-top: 20px !important;
+  }
+
+  .contact_section .contact_form-container input,
+  .contact_section .contact_form-container textarea {
+    height: auto !important;
+    padding: 10px !important;
+    margin: 10px 0 !important;
+  }
+
+  .contact_section .contact_form-container button {
+    padding: 8px 30px !important;
+    font-size: 12px !important;
+  }
+
+  .team_section .box {
+    margin-top: 25px !important;
+  }
+
+  .team_section .box .detail-box {
+    padding: 15px 10px !important;
+  }
+
+  .col-md-4,
+  .col-md-6,
+  .col-md-3 {
+    width: 100% !important;
+  }
+
+  .layout_padding {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+
+  .info_section h5,
+  .info_section .info_form h5 {
+    font-size: 1.2rem !important;
+  }
+
+  .footer_section {
+    font-size: 12px !important;
+  }
+
+  .slider_section .idicator_container {
+    margin-bottom: 20px;
   }
 }
 
-@media (max-width: 480px) {}
+@media (max-width: 480px) {
+  .header_top {
+    display: none;
+  }
 
-@media (max-width: 420px) {}
+  nav {
+    top: 0 !important;
+  }
 
-@media (max-width: 376px) {}
+  nav a {
+    padding: 8px 10px !important;
+    font-size: 11px !important;
+  }
+
+  .slider_section {
+    padding: 20px 0 80px 0 !important;
+  }
+
+  .slider_section .detail-box h1 {
+    font-size: 1.5rem !important;
+    line-height: 35px !important;
+  }
+
+  .slider_section .detail-box p {
+    font-size: 12px !important;
+  }
+
+  .slider_section .detail-box .btn-box a {
+    width: 120px !important;
+    padding: 6px 15px !important;
+    font-size: 11px !important;
+  }
+
+  .heading_container h2 {
+    font-size: 1.3rem !important;
+  }
+
+  .service_section .box {
+    padding: 15px 10px !important;
+  }
+
+  .contact_section {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+
+  .contact_form-container input {
+    height: 40px !important;
+  }
+
+  .contact_form-container input.message_input {
+    height: 100px !important;
+  }
+
+  .layout_padding {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+
+  .col-md-4,
+  .col-md-6,
+  .col-md-3,
+  .col-lg-4 {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 420px) {
+  nav a {
+    padding: 6px 8px !important;
+    font-size: 10px !important;
+  }
+
+  .slider_section .detail-box h1 {
+    font-size: 1.3rem !important;
+    line-height: 30px !important;
+  }
+
+  .heading_container h2 {
+    font-size: 1.1rem !important;
+  }
+
+  .contact_form-container input {
+    height: 35px !important;
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 376px) {
+  nav a {
+    padding: 5px 6px !important;
+    font-size: 9px !important;
+  }
+
+  .slider_section .detail-box h1 {
+    font-size: 1.1rem !important;
+    line-height: 25px !important;
+  }
+
+  .slider_section .detail-box .btn-box a {
+    width: 100px !important;
+    padding: 5px 10px !important;
+    font-size: 10px !important;
+  }
+
+  .heading_container h2 {
+    font-size: 1rem !important;
+  }
+}
 
 @media (min-width: 1200px) {
   .container {
