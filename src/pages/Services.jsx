@@ -6,32 +6,38 @@ const Services = () => {
     {
       title: 'Web Development',
       description: 'Custom web solutions built with modern technologies to meet your unique business needs. From responsive design to full-stack applications, we deliver excellence.',
-      icon: 'fa-code'
+      icon: 'fa-code',
+      image: 'https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&w=600'
     },
     {
       title: 'Mobile Apps',
       description: 'Powerful mobile applications designed for iOS and Android platforms. We create intuitive, feature-rich apps that engage users and drive business growth.',
-      icon: 'fa-mobile'
+      icon: 'fa-mobile',
+      image: 'https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=600'
     },
     {
       title: 'Cloud Solutions',
       description: 'Scalable cloud infrastructure and services to optimize your business operations. We provide secure, reliable cloud solutions tailored to your needs.',
-      icon: 'fa-cloud'
+      icon: 'fa-cloud',
+      image: 'https://images.pexels.com/photos/546424/pexels-photo-546424.jpeg?auto=compress&cs=tinysrgb&w=600'
     },
     {
       title: 'Cybersecurity',
       description: 'Comprehensive security solutions to protect your data and systems from threats. Our experts implement industry-leading security practices.',
-      icon: 'fa-shield'
+      icon: 'fa-shield',
+      image: 'https://images.pexels.com/photos/5632399/pexels-photo-5632399.jpeg?auto=compress&cs=tinysrgb&w=600'
     },
     {
       title: 'Data Analytics',
       description: 'Transform raw data into actionable insights to drive informed business decisions. We provide advanced analytics and business intelligence solutions.',
-      icon: 'fa-database'
+      icon: 'fa-database',
+      image: 'https://images.pexels.com/photos/3862633/pexels-photo-3862633.jpeg?auto=compress&cs=tinysrgb&w=600'
     },
     {
       title: 'IT Consulting',
       description: 'Expert guidance on technology strategy, implementation, and digital transformation. Our consultants help you navigate complex IT challenges.',
-      icon: 'fa-cogs'
+      icon: 'fa-cogs',
+      image: 'https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=600'
     }
   ];
 
@@ -65,9 +71,29 @@ const Services = () => {
           <div className="row">
             {services.map((service, index) => (
               <div className="col-md-4" key={index}>
-                <div className="box">
-                  <div className="img-box">
-                    <i className={`fa ${service.icon}`} style={{ fontSize: '75px', color: '#1c1c1c' }}></i>
+                <div className="box" style={{ overflow: 'hidden', borderRadius: '8px', transition: 'transform 0.3s ease, box-shadow 0.3s ease' }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-5px)';
+                    e.currentTarget.style.boxShadow = '0 8px 20px rgba(0,0,0,0.15)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
+                >
+                  <div className="img-box" style={{ height: '200px', overflow: 'hidden', background: '#f0f0f0' }}>
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        transition: 'transform 0.3s ease'
+                      }}
+                      onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'}
+                      onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
+                    />
                   </div>
                   <div className="detail-box">
                     <h6>{service.title}</h6>

@@ -7,37 +7,37 @@ const Portfolio = () => {
       title: 'E-Commerce Platform',
       category: 'Web Development',
       description: 'Full-featured e-commerce platform with payment integration and inventory management.',
-      image: '/byte.png'
+      image: 'https://images.pexels.com/photos/3962571/pexels-photo-3962571.jpeg?auto=compress&cs=tinysrgb&w=600'
     },
     {
       title: 'Mobile Banking App',
       category: 'Mobile Development',
       description: 'Secure banking application with real-time transaction tracking and analytics.',
-      image: '/emiestre.png'
+      image: 'https://images.pexels.com/photos/3945687/pexels-photo-3945687.jpeg?auto=compress&cs=tinysrgb&w=600'
     },
     {
       title: 'Cloud Migration',
       category: 'Cloud Solutions',
       description: 'Enterprise cloud migration with zero downtime and optimized infrastructure.',
-      image: '/byte.png'
+      image: 'https://images.pexels.com/photos/207580/pexels-photo-207580.jpeg?auto=compress&cs=tinysrgb&w=600'
     },
     {
       title: 'Data Analytics Dashboard',
       category: 'Data Analytics',
       description: 'Advanced analytics platform for real-time business insights and reporting.',
-      image: '/emiestre.png'
+      image: 'https://images.pexels.com/photos/669996/pexels-photo-669996.jpeg?auto=compress&cs=tinysrgb&w=600'
     },
     {
       title: 'Security Audit System',
       category: 'Cybersecurity',
       description: 'Comprehensive security audit and monitoring system for enterprise networks.',
-      image: '/byte.png'
+      image: 'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=600'
     },
     {
       title: 'CRM Implementation',
       category: 'IT Consulting',
       description: 'Enterprise CRM system implementation with custom workflows and integrations.',
-      image: '/emiestre.png'
+      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600'
     }
   ];
 

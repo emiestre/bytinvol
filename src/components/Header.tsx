@@ -145,18 +145,62 @@ const Header = () => {
             </div>
 
 
-            {/* Mobile Menu Button - Hidden on desktop */}
-            <div style={{ display: 'none' }}>
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                style={{ background: 'none', border: 'none', color: '#000' }}
-              >
-                {isOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
-            </div>
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              style={{
+                background: 'none',
+                border: 'none',
+                color: '#000',
+                display: 'none',
+                cursor: 'pointer'
+              }}
+              className="mobile-menu-btn"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
         </div>
       </nav>
+
+      {/* Mobile Menu Dropdown */}
+      {isOpen && (
+        <div style={{
+          position: 'fixed',
+          top: '115px',
+          left: 0,
+          right: 0,
+          backgroundColor: 'white',
+          boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+          zIndex: 40,
+          display: 'none'
+        }}
+        className="mobile-menu-dropdown"
+        >
+          <div style={{ padding: '0' }}>
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                to={item.href}
+                onClick={() => setIsOpen(false)}
+                style={{
+                  display: 'block',
+                  padding: '12px 20px',
+                  textDecoration: 'none',
+                  color: '#000',
+                  fontSize: '14px',
+                  fontWeight: 'bold',
+                  borderBottom: '1px solid #eee',
+                  transition: 'background-color 0.3s ease'
+                }}
+                className="mobile-nav-link"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Spacer to prevent content from being hidden under fixed header */}
       <div style={{ height: '70px' }}></div>

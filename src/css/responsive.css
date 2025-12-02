@@ -51,6 +51,22 @@
 }
 
 @media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block !important;
+  }
+
+  nav .flex.items-center.gap-0 {
+    display: none !important;
+  }
+
+  .mobile-menu-dropdown {
+    display: block !important;
+  }
+
+  .mobile-nav-link:hover {
+    background-color: #f5f5f5;
+  }
+
   .slider_section ol.carousel-indicators {
     justify-content: center;
   }
