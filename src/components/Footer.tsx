@@ -79,299 +79,336 @@ const Footer = () => {
 
   return (
     <footer className="bg-dark text-white relative overflow-hidden" style={{ fontFamily: 'Poppins, sans-serif' }}>
-      {/* Main Footer Content */}
-      <section className="info_section relative py-5">
-        <div className="container">
-          <div className="row">
+      <section className="info_section relative" style={{ padding: 'clamp(1.5rem, 5vw, 3rem) 0' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 clamp(1rem, 4vw, 2rem)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 'clamp(1.5rem, 4vw, 2.5rem)' }}>
+
             {/* Company Info */}
-            <div className="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div>
               <div className="info_logo">
                 <Link className="navbar-brand d-block mb-3" to="/" style={{ textDecoration: 'none' }}>
-                  <div className="d-flex align-items-center">
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                     <img
                       src="./byte.png"
                       alt="ByteWave Innovations"
-                      className="h-16 w-auto rounded-full bg-white p-2 me-3"
+                      style={{
+                        height: 'clamp(2.5rem, 8vw, 4rem)',
+                        width: 'auto',
+                        borderRadius: '50%',
+                        backgroundColor: 'white',
+                        padding: '0.5rem'
+                      }}
                     />
                     <div>
-                      <span className="h4 mb-0 d-block" style={{ color: 'white', fontWeight: '600' }}>
+                      <span style={{ color: 'white', fontWeight: '600', fontSize: 'clamp(1.1rem, 3vw, 1.5rem)', display: 'block', lineHeight: '1.2' }}>
                         ByteWave
                       </span>
-                      <small className="text-primary" style={{ fontSize: '0.8rem', fontWeight: '500' }}>
+                      <small style={{ fontSize: 'clamp(0.7rem, 1.5vw, 0.85rem)', fontWeight: '500', color: '#0d6efd' }}>
                         Innovations Ltd
                       </small>
                     </div>
                   </div>
                 </Link>
-                <p className="text-light mb-4" style={{ lineHeight: '1.6', fontSize: '1.6rem' }}>
-                  Delivering cutting-edge technology solutions to propel your business into the future. 
-                  Innovation, transformation, and success - that's our promise.
+                <p style={{ color: '#e0e0e0', marginBottom: '1.5rem', lineHeight: '1.6', fontSize: 'clamp(0.85rem, 2vw, 0.95rem)' }}>
+                  Delivering cutting-edge technology solutions to propel your business into the future. Innovation, transformation, and success - that's our promise.
                 </p>
-                
-                {/* Social Links */}
-                <div className="social-box">
-                  <h3 className="text-white mb-3" style={{ fontWeight: '400' }}>Follow Us</h3>
-                  <div className="d-flex gap-2">
-                     {socialLinks.map((social, index) => {
-                          const Icon = social.icon;
-                          return (
-                            <a
-                              key={social.label}
-                              href={social.href}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center justify-center w-10 h-10 rounded transition-all duration-300 bg-white/10 border border-white/20 hover:bg-blue-500 hover:-translate-y-1"
-                              style={{
-                                color: 'white',
-                                textDecoration: 'none',
-                              }}
-                            >
-                              <Icon size={20} />
-                            </a>
-                          );
-                        })}
 
+                {/* Social Links */}
+                <div>
+                  <h3 style={{ color: 'white', marginBottom: '1rem', fontWeight: '400', fontSize: 'clamp(0.95rem, 2.5vw, 1.1rem)' }}>Follow Us</h3>
+                  <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                    {socialLinks.map((social) => {
+                      const Icon = social.icon;
+                      return (
+                        <a
+                          key={social.label}
+                          href={social.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            width: 'clamp(2.2rem, 5vw, 2.8rem)',
+                            height: 'clamp(2.2rem, 5vw, 2.8rem)',
+                            borderRadius: '0.375rem',
+                            backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                            border: '1px solid rgba(255, 255, 255, 0.2)',
+                            color: 'white',
+                            textDecoration: 'none',
+                            transition: 'all 0.3s ease',
+                            cursor: 'pointer'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor = '#0d6efd';
+                            e.currentTarget.style.transform = 'translateY(-2px)';
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+                            e.currentTarget.style.transform = 'translateY(0)';
+                          }}
+                        >
+                          <Icon size={18} />
+                        </a>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
             </div>
-            
+
             {/* Services Links */}
-            <div className="col-lg-2 col-md-6 col-sm-12 mb-4">
-              <div className="info_links">
-                <h5 className="text-white mb-4" style={{ fontWeight: '600', fontSize: '1.9rem' }}>Services</h5>
-
-                
-                {/* <ul className="list-unstyled">
-                  {serviceLinks.map((link, index) => (
-                    <li key={index} className="mb-3">
-                      <a 
-                        href={link.href}
-                        className="text-light text-decoration-none d-block py-1"
-                        style={{
-                          transition: 'all 0.3s ease',
-                          fontSize: '0.9rem'
-                        }}
-                        onMouseOver={(e) => {
-                          e.target.style.color = '#0d6efd';
-                          e.target.style.paddingLeft = '8px';
-                        }}
-                        onMouseOut={(e) => {
-                          e.target.style.color = '#dee2e6';
-                          e.target.style.paddingLeft = '0';
-                        }}
-                      >
-                        {link.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul> */}
-                <ul className="list-unstyled">
-                      {serviceLinks.map((link, index) => (
-                        <li key={index} className="mb-3">
-                          <Link
-                            to={link.href}
-                            className="text-gray-300 block py-1 text-[1.5rem] hover:text-blue-600 hover:pl-2 transition-all duration-300"
-                          >
-                            {link.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-
-              </div>
-            </div>
-            
-            {/* Company Links */}
-            <div className="col-lg-2 col-md-6 col-sm-12 mb-4">
-              <div className="info_links">
-                <h5 className="text-white mb-4" style={{ fontWeight: '600', fontSize: '1.9rem' }}>Company</h5>
-                {/* <ul className="list-unstyled">
-                  {companyLinks.map((link, index) => (
-                    <li key={index} className="mb-3">
-                      <a 
-                        href={link.href}
-                        className="text-light text-decoration-none d-block py-1"
-                        style={{
-                          transition: 'all 0.3s ease',
-                          fontSize: '0.9rem'
-                        }}
-                        onMouseOver={(e) => {
-                          e.target.style.color = '#0d6efd';
-                          e.target.style.paddingLeft = '8px';
-                        }}
-                        onMouseOut={(e) => {
-                          e.target.style.color = '#dee2e6';
-                          e.target.style.paddingLeft = '0';
-                        }}
-                      >
-                        {link.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul> */}
-    
-             <ul className="list-unstyled">
-                {companyLinks.map((link, index) => (
-                  <li key={index} className="mb-3">
+            <div>
+              <h5 style={{ color: 'white', marginBottom: '1.5rem', fontWeight: '600', fontSize: 'clamp(1rem, 3vw, 1.2rem)' }}>Services</h5>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                {serviceLinks.map((link, index) => (
+                  <li key={index} style={{ marginBottom: '0.75rem' }}>
                     <Link
                       to={link.href}
-                      className="text-gray-300 block py-1 text-[1.5rem] hover:text-blue-600 hover:pl-2 transition-all duration-300"
+                      style={{
+                        color: '#b0b0b0',
+                        textDecoration: 'none',
+                        display: 'block',
+                        padding: '0.25rem 0',
+                        fontSize: 'clamp(0.85rem, 2vw, 0.95rem)',
+                        transition: 'all 0.3s ease'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.color = '#0d6efd';
+                        e.currentTarget.style.paddingLeft = '0.5rem';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.color = '#b0b0b0';
+                        e.currentTarget.style.paddingLeft = '0';
+                      }}
                     >
                       {link.label}
                     </Link>
                   </li>
                 ))}
               </ul>
-
-              </div>
             </div>
-            
-            {/* Contact & Newsletter */}
-            <div className="col-lg-4 col-md-6 col-sm-12 mb-4">
-              <div className="info_form">
-                <h5 className="text-white mb-4" style={{ fontWeight: '600', fontSize: '1.9rem' }}>Stay Updated</h5>
-                
-                {/* Newsletter Form */}
-                <form onSubmit={handleSubmit} className="mb-4">
-                  <div className="mb-3">
-                    <input 
-                      type="email" 
-                      placeholder="Enter your email address" 
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                      className="form-control form-control-lg"
-                      style={{ 
-                        background: 'rgba(255,255,255,0.1)',
-                        border: '1px solid rgba(255,255,255,0.3)',
-                        color: 'white',
-                        fontSize: '0.9rem'
-                      }}
-                    />
-                  </div>
-                  <button 
-                    type="submit" 
-                    className="btn btn-primary btn-lg w-100"
-                    disabled={isSubscribed}
-                    style={{ fontWeight: '500' }}
-                  >
-                    {isSubscribed ? 'Thank You!' : 'Subscribe to Newsletter'}
-                  </button>
-                </form>
-                
-                {/* Contact Info */}
-                <div className="contact-info">
-                  <h6 className="text-white mb-3" style={{ fontWeight: '600', fontSize: '1.9rem' }}>Contact Info</h6>
-                  <div className="d-flex flex-column gap-2">
-                    <a href="tel:+17787934640" className="text-light text-decoration-none d-flex align-items-center">
-                      <i className="fa fa-phone me-2" style={{ width: '20px' }}></i>
-                      <span style={{ fontSize: '1.5rem' }}>+1 (778) 793-4640</span>
-                    </a>
-                    <a href="mailto:info@bytewaveinnovations.ca" className="text-light text-decoration-none d-flex align-items-center">
-                      <i className="fa fa-envelope me-2" style={{ width: '20px' }}></i>
-                      <span style={{ fontSize: '1.5rem' }}>info@bytewaveinnovations.ca</span>
-                    </a>
-                    <div className="text-light d-flex align-items-center">
-                      <i className="fa fa-map-marker me-2" style={{ width: '20px' }}></i>
-                      <span style={{ fontSize: '1.5rem' }}>6119 186 St, Surrey, BC V3S7P5</span>
-                    </div>
-                  </div>
-                </div>
 
-                {/* Legal Links & Scroll to Top */}
-                <div className="d-flex justify-content-between align-items-center mt-4 pt-3 border-top border-secondary">
-                  <div className="legal-links d-flex gap-3">
-                    <button
-                      onClick={() => setIsPrivacyOpen(true)}
-                      className="btn btn-link text-light text-decoration-none p-0"
-                      style={{ 
-                        background: 'transparent', 
-                        border: 'none',
-                        fontSize: '1.9rem',
-                        fontWeight: '800'
+            {/* Company Links */}
+            <div>
+              <h5 style={{ color: 'white', marginBottom: '1.5rem', fontWeight: '600', fontSize: 'clamp(1rem, 3vw, 1.2rem)' }}>Company</h5>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                {companyLinks.map((link, index) => (
+                  <li key={index} style={{ marginBottom: '0.75rem' }}>
+                    <Link
+                      to={link.href}
+                      style={{
+                        color: '#b0b0b0',
+                        textDecoration: 'none',
+                        display: 'block',
+                        padding: '0.25rem 0',
+                        fontSize: 'clamp(0.85rem, 2vw, 0.95rem)',
+                        transition: 'all 0.3s ease'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.color = '#0d6efd';
+                        e.currentTarget.style.paddingLeft = '0.5rem';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.color = '#b0b0b0';
+                        e.currentTarget.style.paddingLeft = '0';
                       }}
                     >
-                      Privacy Policy
-                    </button>
-                    <button
-                      onClick={() => setIsTermsOpen(true)}
-                      className="btn btn-link text-light text-decoration-none p-0"
-                      style={{ 
-                        background: 'transparent', 
-                        border: 'none',
-                        fontSize: '1.9rem',
-                        fontWeight: '800'
-                      }}
-                    >
-                      Terms of Use
-                    </button>
-                  </div>
-                  <button
-                    onClick={scrollToTop}
-                    className="btn btn-primary rounded-circle d-flex align-items-center justify-content-center"
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact & Newsletter */}
+            <div>
+              <h5 style={{ color: 'white', marginBottom: '1.5rem', fontWeight: '600', fontSize: 'clamp(1rem, 3vw, 1.2rem)' }}>Stay Updated</h5>
+
+              <form onSubmit={handleSubmit} style={{ marginBottom: '1.5rem' }}>
+                <div style={{ marginBottom: '0.75rem' }}>
+                  <input
+                    type="email"
+                    placeholder="Enter your email address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
                     style={{
-                      width: '45px',
-                      height: '45px'
+                      background: 'rgba(255,255,255,0.1)',
+                      border: '1px solid rgba(255,255,255,0.3)',
+                      color: 'white',
+                      fontSize: 'clamp(0.8rem, 2vw, 0.9rem)',
+                      padding: 'clamp(0.5rem, 2vw, 0.75rem)',
+                      borderRadius: '0.375rem',
+                      width: '100%',
+                      boxSizing: 'border-box'
                     }}
-                    title="Scroll to top"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  disabled={isSubscribed}
+                  style={{
+                    backgroundColor: '#0d6efd',
+                    color: 'white',
+                    border: 'none',
+                    padding: 'clamp(0.5rem, 2vw, 0.75rem)',
+                    borderRadius: '0.375rem',
+                    width: '100%',
+                    fontWeight: '500',
+                    fontSize: 'clamp(0.8rem, 2vw, 0.9rem)',
+                    cursor: 'pointer',
+                    transition: 'background-color 0.3s ease',
+                    opacity: isSubscribed ? 0.7 : 1
+                  }}
+                  onMouseEnter={(e) => !isSubscribed && (e.currentTarget.style.backgroundColor = '#0a58ca')}
+                  onMouseLeave={(e) => !isSubscribed && (e.currentTarget.style.backgroundColor = '#0d6efd')}
+                >
+                  {isSubscribed ? 'Thank You!' : 'Subscribe'}
+                </button>
+              </form>
+
+              {/* Contact Info */}
+              <div>
+                <h6 style={{ color: 'white', marginBottom: '0.75rem', fontWeight: '600', fontSize: 'clamp(1rem, 3vw, 1.2rem)' }}>Contact Info</h6>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                  <a href="tel:+17787934640" style={{ color: '#e0e0e0', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: 'clamp(0.8rem, 2vw, 0.9rem)', transition: 'color 0.3s ease' }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#0d6efd'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = '#e0e0e0'}
                   >
-                    <ArrowUp size={18} />
-                  </button>
+                    <i className="fa fa-phone" style={{ width: '20px' }}></i>
+                    <span>+1 (778) 793-4640</span>
+                  </a>
+                  <a href="mailto:info@bytewaveinnovations.ca" style={{ color: '#e0e0e0', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: 'clamp(0.8rem, 2vw, 0.9rem)', transition: 'color 0.3s ease' }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#0d6efd'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = '#e0e0e0'}
+                  >
+                    <i className="fa fa-envelope" style={{ width: '20px' }}></i>
+                    <span>info@bytewaveinnovations.ca</span>
+                  </a>
+                  <div style={{ color: '#e0e0e0', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: 'clamp(0.8rem, 2vw, 0.9rem)' }}>
+                    <i className="fa fa-map-marker" style={{ width: '20px' }}></i>
+                    <span>6119 186 St, Surrey, BC V3S7P5</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Bottom Copyright Section */}
-          <div className="border-top border-secondary mt-4 pt-4">
-            <div className="row">
-              <div className="col-12 text-center">
-                <div className="text-light" style={{ fontSize: '0.9rem' }}>
-                  <p className="mb-0">
-                    &copy; {currentYear} {' '}
-                    <a 
-                      href='https://bytewaveinnovationslimited.ca' 
-                      className="text-primary text-decoration-none fw-bold"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      ByteWave Innovations Limited
-                    </a>
-                    . All Rights Reserved. {' | '} 
-                    Powered by {' '}
-                    <a 
-                      className="text-primary text-decoration-none fw-bold" 
-                      href="mailto:kemiestre@gmail.com"
-                    >
-                      Emiestre
-                    </a>
-                  </p>
-                </div>
-              </div>
+          {/* Legal Links & Scroll to Top */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 'clamp(1.5rem, 4vw, 2rem)', paddingTop: 'clamp(1.5rem, 4vw, 2rem)', borderTop: '1px solid rgba(255,255,255,0.2)', flexWrap: 'wrap', gap: '1rem' }}>
+            <div style={{ display: 'flex', gap: 'clamp(0.75rem, 3vw, 1.5rem)', flexWrap: 'wrap' }}>
+              <button
+                onClick={() => setIsPrivacyOpen(true)}
+                style={{
+                  background: 'transparent',
+                  border: 'none',
+                  color: 'white',
+                  textDecoration: 'underline',
+                  cursor: 'pointer',
+                  fontSize: 'clamp(0.8rem, 2vw, 0.9rem)',
+                  fontWeight: '600',
+                  padding: 0,
+                  transition: 'color 0.3s ease'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.color = '#0d6efd'}
+                onMouseLeave={(e) => e.currentTarget.style.color = 'white'}
+              >
+                Privacy Policy
+              </button>
+              <button
+                onClick={() => setIsTermsOpen(true)}
+                style={{
+                  background: 'transparent',
+                  border: 'none',
+                  color: 'white',
+                  textDecoration: 'underline',
+                  cursor: 'pointer',
+                  fontSize: 'clamp(0.8rem, 2vw, 0.9rem)',
+                  fontWeight: '600',
+                  padding: 0,
+                  transition: 'color 0.3s ease'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.color = '#0d6efd'}
+                onMouseLeave={(e) => e.currentTarget.style.color = 'white'}
+              >
+                Terms of Use
+              </button>
             </div>
+            <button
+              onClick={scrollToTop}
+              style={{
+                backgroundColor: '#0d6efd',
+                color: 'white',
+                border: 'none',
+                width: 'clamp(2rem, 5vw, 3rem)',
+                height: 'clamp(2rem, 5vw, 3rem)',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#0a58ca';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#0d6efd';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}
+              title="Scroll to top"
+            >
+              <ArrowUp size={18} />
+            </button>
           </div>
         </div>
       </section>
 
+      {/* Bottom Copyright Section */}
+      <div style={{ borderTop: '1px solid rgba(255,255,255,0.2)', marginTop: 'clamp(1.5rem, 4vw, 2rem)', paddingTop: 'clamp(1.5rem, 4vw, 2rem)', padding: 'clamp(1rem, 3vw, 1.5rem) clamp(1rem, 4vw, 2rem)' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
+          <div style={{ color: '#e0e0e0', fontSize: 'clamp(0.75rem, 1.5vw, 0.9rem)' }}>
+            <p style={{ margin: 0 }}>
+              &copy; {currentYear} {' '}
+              <a
+                href='https://bytewaveinnovationslimited.ca'
+                style={{ color: '#0d6efd', textDecoration: 'none', fontWeight: 'bold' }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                ByteWave Innovations Limited
+              </a>
+              . All Rights Reserved. {' | '}
+              Powered by {' '}
+              <a
+                style={{ color: '#0d6efd', textDecoration: 'none', fontWeight: 'bold' }}
+                href="mailto:kemiestre@gmail.com"
+              >
+                Emiestre
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Modals */}
-      <Modal 
+      <Modal
         isOpen={isPrivacyOpen}
         onClose={() => setIsPrivacyOpen(false)}
-        title={<span className="text-black text">Privacy Policy</span>}
-        
+        title={<span className="text-black">Privacy Policy</span>}
       >
         <PrivacyContent />
       </Modal>
 
       <Modal
-              isOpen={isTermsOpen}
-              onClose={() => setIsTermsOpen(false)}
-              title={<span className="text-black">Terms of Use</span>}
-            >
-              <TermsContent />
-            </Modal>
-``
+        isOpen={isTermsOpen}
+        onClose={() => setIsTermsOpen(false)}
+        title={<span className="text-black">Terms of Use</span>}
+      >
+        <TermsContent />
+      </Modal>
     </footer>
   );
 };
